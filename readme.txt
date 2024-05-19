@@ -17,10 +17,10 @@ still creating a full suite of test to account for edge cases but test pass so f
 
 
 /* *****************************************************************************
- *  Describe any serious problems you encountered.                    
+ *  Describe any serious problems you encountered.
  **************************************************************************** */
 
-Problems faced included fully implementing binary search to account for edge cases 
+Problems faced included fully implementing binary search to account for edge cases
 
 
 

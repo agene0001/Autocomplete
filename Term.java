@@ -4,6 +4,14 @@ public class Term implements Comparable<Term> {
     private String query;
     private long weight;
 
+    public String getQuery() {
+        return query;
+    }
+
+    public long getWeight() {
+        return weight;
+    }
+
     // Initializes a term with the given query string and weight.
     public Term(String query, long weight) {
         if (query != null || weight >= 0) {
@@ -34,16 +42,34 @@ public class Term implements Comparable<Term> {
 
     // Compares the two terms in lexicographic order,
     // but using only the first r characters of each query.
+    // public static Comparator<Term> byPrefixOrder(int r) {
+    //     return new Comparator<Term>() {
+    //         public int compare(Term o1, Term o2) {
+    //             int temp = Math.min(o1.query.length(), o2.query.length());
+    //             temp = Math.min(temp, r);
+    //             String str1 = o1.query.substring(0, temp);
+    //             String str2 = o2.query.substring(0, temp);
+    //             int t = str1.compareTo(str2);
+    //             return t;
+    //         }
+    //     };
+    // }
+    //
+
     public static Comparator<Term> byPrefixOrder(int r) {
         return new Comparator<Term>() {
             public int compare(Term o1, Term o2) {
-                String str1 = o1.query.substring(0, r);
-                String str2 = o2.query.substring(0, r);
-                return str1.compareTo(str2);
+                String o1str = o1.query;
+                String o2str = o2.query;
+                int temp = Math.min(o1str.length(), o2str.length());
+                temp = Math.min(temp, r);
+                String str1 = o1.query.substring(0, Math.min(r, o1str.length()));
+                String str2 = o2.query.substring(0, Math.min(r, o2str.length()));
+                int t = str1.compareTo(str2);
+                return t;
             }
         };
     }
-
 
     // Compares the two terms in lexicographic order by query.
     public int compareTo(Term that) {
@@ -53,7 +79,7 @@ public class Term implements Comparable<Term> {
     // Returns a string representation of this term in the following format:
     // the weight, followed by a tab, followed by the query.
     public String toString() {
-        return "";
+        return weight + "\t" + query + "\n";
     }
 
     // unit testing (required)
