@@ -133,30 +133,30 @@ public class AutocompleteGUI extends JFrame {
         // Define the layout of the window
         layout.setHorizontalGroup(
                 layout.createSequentialGroup()
-                      .addGroup(layout.createParallelGroup(
-                                              GroupLayout.Alignment.TRAILING)
-                                      .addComponent(textLabel, GroupLayout.PREFERRED_SIZE,
-                                                    GroupLayout.DEFAULT_SIZE,
-                                                    GroupLayout.PREFERRED_SIZE)
-                                      .addComponent(checkbox, GroupLayout.PREFERRED_SIZE,
-                                                    GroupLayout.DEFAULT_SIZE,
-                                                    GroupLayout.PREFERRED_SIZE))
-                      .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
-                                       GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
-                      .addComponent(ap, 0, GroupLayout.DEFAULT_SIZE, DEF_WIDTH)
-                      .addComponent(searchButton, GroupLayout.PREFERRED_SIZE,
-                                    GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
+                        .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.TRAILING)
+                                .addComponent(textLabel, GroupLayout.PREFERRED_SIZE,
+                                        GroupLayout.DEFAULT_SIZE,
+                                        GroupLayout.PREFERRED_SIZE)
+                                .addComponent(checkbox, GroupLayout.PREFERRED_SIZE,
+                                        GroupLayout.DEFAULT_SIZE,
+                                        GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
+                        .addComponent(ap, 0, GroupLayout.DEFAULT_SIZE, DEF_WIDTH)
+                        .addComponent(searchButton, GroupLayout.PREFERRED_SIZE,
+                                GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
         );
 
         layout.setVerticalGroup(
                 layout.createSequentialGroup()
-                      .addGroup(layout.createParallelGroup(
-                                              GroupLayout.Alignment.LEADING)
-                                      .addGroup(layout.createSequentialGroup()
-                                                      .addComponent(textLabel)
-                                                      .addComponent(checkbox))
-                                      .addComponent(ap)
-                                      .addComponent(searchButton))
+                        .addGroup(layout.createParallelGroup(
+                                        GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addComponent(textLabel)
+                                        .addComponent(checkbox))
+                                .addComponent(ap)
+                                .addComponent(searchButton))
         );
     }
 
@@ -479,22 +479,22 @@ public class AutocompleteGUI extends JFrame {
             // Define the layout of the text box and suggestion dropdown
             layout.setHorizontalGroup(
                     layout.createSequentialGroup()
-                          .addGroup(layout.createParallelGroup(
-                                                  GroupLayout.Alignment.LEADING)
-                                          .addComponent(searchTextPanel, 0,
-                                                        GroupLayout.DEFAULT_SIZE,
-                                                        GroupLayout.PREFERRED_SIZE)
-                                          .addComponent(suggestionsPanel,
-                                                        GroupLayout.DEFAULT_SIZE,
-                                                        GroupLayout.DEFAULT_SIZE,
-                                                        GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(
+                                            GroupLayout.Alignment.LEADING)
+                                    .addComponent(searchTextPanel, 0,
+                                            GroupLayout.DEFAULT_SIZE,
+                                            GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(suggestionsPanel,
+                                            GroupLayout.DEFAULT_SIZE,
+                                            GroupLayout.DEFAULT_SIZE,
+                                            GroupLayout.PREFERRED_SIZE))
 
             );
 
             layout.setVerticalGroup(
                     layout.createSequentialGroup()
-                          .addComponent(searchTextPanel)
-                          .addComponent(suggestionsPanel)
+                            .addComponent(searchTextPanel)
+                            .addComponent(suggestionsPanel)
             );
         }
 
@@ -559,13 +559,13 @@ public class AutocompleteGUI extends JFrame {
                         String next = allResults[i].toString();
                         if (allResults[i] == null) {
                             throw new NullPointerException("allMatches() "
-                                                                   + "returned an array with a null entry");
+                                    + "returned an array with a null entry");
                         }
                         int tab = next.indexOf('\t');
                         if (tab < 0) {
                             throw new RuntimeException("allMatches() returned"
-                                                               + " an array with an entry without a tab:"
-                                                               + " '" + next + "'");
+                                    + " an array with an entry without a tab:"
+                                    + " '" + next + "'");
                         }
 
                         // truncate length if needed

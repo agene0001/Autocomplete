@@ -26,6 +26,7 @@ public class Autocomplete {
     // Returns all terms that start with the given prefix,
     // in descending order of weight.
     public Term[] allMatches(String prefix) {
+
         if (prefix == null) {
             throw new IllegalArgumentException("prefix cannot be null");
         }
@@ -43,7 +44,7 @@ public class Autocomplete {
             return temp1;
         }
         else {
-            throw new IllegalArgumentException("No matches found");
+             return new Term[]{};
         }
     }
 
